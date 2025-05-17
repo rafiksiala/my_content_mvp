@@ -3,3 +3,6 @@
 # Manually managing azure-functions-worker may cause unexpected issues
 
 azure-functions
+scikit-surprise
+pandas
+numpy<2.0
