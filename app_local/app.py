@@ -2,19 +2,10 @@ import streamlit as st
 import requests
 import pandas as pd
 
-st.set_page_config(page_title="Recommandation My Content", layout="centered")
-st.markdown("""
-    <style>
-        .block-container {
-            padding-left: 2rem;
-            padding-right: 2rem;
-            padding-top: 1rem;
-            max-width: 60%;
-        }
-        header, footer {visibility: hidden;}
-    </style>
-""", unsafe_allow_html=True)
-st.title("Recommandation d'articles - My Content")
+st.set_page_config(page_title="Recommandation My Content")
+
+st.title("Recommandation d'articles")
+st.markdown("\n")
 
 # Charger dynamiquement les user_id depuis clicks_sample.csv
 try:
@@ -50,7 +41,7 @@ if user_ids:
                             - 📰 **Article ID**: `{article['article_id']}`
                                 - 📚 Catégorie : `{article.get('category_id', 'N/A')}`
                                 - 🏢 Publisher : `{article.get('publisher_id', 'N/A')}`
-                                - 🔢 Score de popularité : `{article.get('score', 'N/A')}`
+                                - 🔢 Score de popularité : `{round(article['score'], 3)}`
                             """
                         )
 
