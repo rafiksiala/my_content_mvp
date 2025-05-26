@@ -9,11 +9,11 @@ st.markdown("\n")
 
 # Charger dynamiquement les user_id depuis clicks_sample.csv
 try:
-    df = pd.read_csv("data/clicks_sample.csv")
+    df = pd.read_csv("data/users.csv")
     user_ids = sorted(df["user_id"].unique().tolist())
     user_ids = [str(user_id) for user_id in user_ids]
 except Exception:
-    st.error("Impossible de charger la liste des utilisateurs depuis clicks_sample.csv.")
+    st.error("Impossible de charger la liste des utilisateurs depuis users.csv.")
     user_ids = []
 
 if user_ids:
