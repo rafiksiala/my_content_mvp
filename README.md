@@ -31,10 +31,10 @@ my_content_mvp/
 ├── streamlit_app/                   # Application Streamlit pour tester l'API
 │   ├── app.py                       # Interface utilisateur avec appel à l'API Azure
 │   └── data/
-│       ├── clicks_sample.csv        # Données d’interactions utilisateur/article
-│       └── articles_metadata.csv    # Métadonnées des articles
+│       └── users.csv                # Liste des identifiants utilisateurs utilisés dans l'interface
 │
-├── deploy_function.sh               # Script CLI pour déploiement rapide via terminal
+├── notebook.ipynb                   # Notebook exploratoire avec tests et comparaison des modèles
+├── deploy_function.sh               # Script CLI pour déploiement rapide de l'azure function via terminal
 ├── .gitignore                       # Fichiers/dossiers exclus du versioning
 └── README.md                        # Documentation du projet
 ```
@@ -112,6 +112,21 @@ GET https://my-content-func.azurewebsites.net/api/recommend_articles?user_id=0
 - **Stockage** : Azure Blob Storage pour les embeddings
 - **Modèle** : Approche content-based avec similarité cosinus
 
+---
+
+## Notebook exploratoire
+
+Un **notebook exploratoire** est inclus dans le dépôt.
+Il contient les tests comparatifs des différentes approches de recommandation :
+
+* Popularité (baseline)
+* Filtrage collaboratif (SVD, NMF, KNN, ALS)
+* Content-based avec embeddings vectoriels
+
+Le code a été structuré en fonctions claires pour faciliter la lecture et la réutilisation
+
+> Ce notebook permet de **visualiser les performances comparées** (Recall, MAP, MRR, Coverage) et **justifie le choix du modèle content-based** retenu pour le MVP.
+ 
 ---
 
 ## Évolutions possibles
