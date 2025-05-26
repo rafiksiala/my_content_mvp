@@ -7,7 +7,7 @@ st.set_page_config(page_title="Recommandation My Content")
 st.title("Recommandation d'articles")
 st.markdown("\n")
 
-# Charger dynamiquement les user_id depuis clicks_sample.csv
+# Charger dynamiquement les user_id depuis users.csv
 try:
     df = pd.read_csv("data/users.csv")
     user_ids = sorted(df["user_id"].unique().tolist())
