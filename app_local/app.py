@@ -41,7 +41,7 @@ if user_ids:
                             - 📰 **Article ID**: `{article['article_id']}`
                                 - 📚 Catégorie : `{article.get('category_id', 'N/A')}`
                                 - 🏢 Publisher : `{article.get('publisher_id', 'N/A')}`
-                                - 🔢 Score de popularité : `{round(article['score'], 3)}`
+                                - 🔢 Score : `{round(article['score'], 3)}`
                             """
                         )
 
